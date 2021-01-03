@@ -1,0 +1,16 @@
+ip -o link show | awk -F': ' '{print $2}'
+
+//  The ip command is a Linux net-tool for system and network administrators.
+//  IP stands for Internet Protocol and as the name suggests, the tool is used for configuring network interfaces.
+
+//  -o, -oneline
+//  output each record on a single line, replacing line feeds with the '\' character.
+
+//  link is a network device and the corresponding commands display and change the state of devices.
+ 
+//  link show - display device attributes i.e. network intefaces
+
+
+//  Awk is a scripting language used for manipulating data and generating reports
+//  -F fs            : Use fs for the input field separator eg. ': ' to separate each line into variables and having the full line as variable $0.
+//  '{print $2}'    tells Awk to only print the second variable.

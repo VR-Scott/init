@@ -1,0 +1,6 @@
+ip a s eth0 | egrep -o 'inet [0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | cut -d' ' -f2
+
+//  ip a(ddr) s(how) eth0 - shows the ip address info of the eth0
+//  egrep -o    :Print only the matched (non-empty) parts of a matching line, with each such part on a separate output line.
+//  [0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3} : regex for 0-9 1 to 3 times followed by a '.' this repeated 2 more times followed by last 0-9 1 to 3 times.
+//  cut -d' ' -f2 : delimits by ' ' and selects only the 2nd field.
