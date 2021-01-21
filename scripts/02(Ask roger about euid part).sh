@@ -1,7 +1,11 @@
 #!/bin/bash
 
 userinput=$1
-online="$(who | awk '{print $1}' | grep -o ^"$userinput"$)"
+# online="$(who | awk '{print $1}' | grep -o ^"$userinput"$)"
+# # Use this line if you want to delete any non system user
+# regardless of whether they are online or not.
+# You may want to remove the killall aswell if you use this.
+online="$(grep -o ^"$userinput" /etc/passwd)"
 
 if [ "$EUID" -ne 0 ]
 then
